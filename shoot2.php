@@ -14,6 +14,6 @@ fclose($plik2);
 $plik2 = fopen('shoot2.txt','w');
 fputs($plik2, $shoot2);
 fclose($plik2);
-header('Location: server2.php');
+//header('Location: server2.php');
 }
 ?>
