@@ -53,7 +53,7 @@ petla++;
 
 }
 if(petla==3){
-location.href ='server1.php?s='+szoty;
+location.href ='server1.php';
 }
 }
 }
@@ -61,6 +61,13 @@ window.setInterval('liczz();',1000);
 window.setInterval('odswierzanie();',1000);
 
 function licz(x){
+	
+	
+	
+$.get("shoot1.php", { s : x  },  function(data) {
+
+});
+	
 	
 	ready();
 	szoty=x;
@@ -551,24 +558,3 @@ $.get("ready2.php", { 'key' : '777' },  function(data) {
 });
 </script>
 
-<?
-
-//echo "<br><br>".$point;
-
-$zapis=$_GET["s"];
-
-
-if(!empty($zapis)){
-	
-	$plik2 = fopen('shoot1.txt','r');
-$shoot2=fgets($plik2, 10000);
-$shoot2=$shoot2."b".$zapis;
-fclose($plik2);
-
-$plik2 = fopen('shoot1.txt','w');
-fputs($plik2, $shoot2);
-fclose($plik2);
-header('Location: server1.php');
-}
-
-?>
