@@ -466,6 +466,28 @@ foreach ($shoot2tab as $key){
 }
 fclose($plik2);
 
+
+
+$plik2 = fopen('shoot1.txt','r');
+$shoot2=fgets($plik2, 10000);
+$shoot2tab = explode("b", $shoot2);
+
+foreach ($shoot2tab as $key){
+	
+	$shoot2tab2 = explode("a", $key);
+	//var_dump($shoot2tab2);
+	
+		
+		echo "$('#c".$shoot2tab2[0]."a".$shoot2tab2[1]."').css('background-color','#000000');";
+		
+		
+	
+	
+}
+
+//var_dump($shoot2tab);
+fclose($plik2);
+
 //----------------------------------------------------------shooty wroga
 
 $plik2 = fopen('shoot1.txt','r');
